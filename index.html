@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepSense - AI Workout Coach & Real-Time Form Tracker</title>
+    <meta name="description" content="Count every rep. Fix every form. RepSense brings real-time on-device computer vision AI biomechanics coaching right to your Android device.">
+    <style>
+        :root {
+            --bg-color: #0b1020;
+            --surface-color: #151a30;
+            --card-color: #1a2240;
+            --accent-purple: #8b5cf6;
+            --accent-violet: #a78bfa;
+            --neon-green: #10b981;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #273155;
+            --max-width: 1080px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent-purple), #6366f1);
+            color: #ffffff;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.25rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-left: 24px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active { color: var(--accent-violet); }
+
+        .hero {
+            max-width: var(--max-width);
+            margin: 60px auto 40px;
+            padding: 0 24px;
+            text-align: center;
+        }
+
+        .tagline-badge {
+            display: inline-block;
+            background-color: rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            color: var(--accent-violet);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 40%, var(--accent-violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-purple), #6366f1);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(139, 92, 246, 0.5);
+        }
+
+        .features-grid {
+            max-width: var(--max-width);
+            margin: 40px auto 80px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 28px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .privacy-strip {
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .privacy-strip-container {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .privacy-strip h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .privacy-strip p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+        }
+
+        footer {
+            background-color: var(--bg-color);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-violet);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand">
+                <div class="brand-badge">R</div>
+                RepSense
+            </a>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="delete-account.html">Delete Data</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="tagline-badge">Count Every Rep. Fix Every Form.</div>
+        <h1>AI Vision Workout Coach<br>Built for Mobile Precision</h1>
+        <p>
+            RepSense brings real-time on-device computer vision to your fitness routine. Track joint biomechanics, count valid repetitions, and receive instant voice coaching without sending video frames to the cloud.
+        </p>
+        <div class="cta-group">
+            <a href="https://play.google.com/store/apps/details?id=com.repsense.app" class="btn-primary" target="_blank" rel="noopener">
+                Get RepSense on Google Play
+            </a>
+        </div>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">👁️</div>
+            <h3>On-Device Vision AI</h3>
+            <p>
+                Powered by Google MediaPipe Pose Landmarker running 100% locally on your smartphone. Zero video frames are recorded or uploaded.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🎙️</div>
+            <h3>Real-Time Voice Coaching</h3>
+            <p>
+                Immediate audio cues detect form breakdowns—like knee cave in squats or uneven hips in lunges—and coach you live before injury occurs.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Progressive Analytics</h3>
+            <p>
+                Comprehensive set-by-set tracking, form score analysis, muscle balance distribution, and weekly activity goals stored safely on your device.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">👟</div>
+            <h3>Step &amp; Calorie Tracking</h3>
+            <p>
+                Integrated with Google Health Connect and hardware step counter sensors to measure your daily movement and estimated caloric expenditure.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Rep Potential Estimator</h3>
+            <p>
+                Calculates your remaining repetition capacity based on real-time rep cadence and velocity slowdown to help you train near failure safely.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Privacy by Architecture</h3>
+            <p>
+                Your biometric movement data never leaves your device. You have full control with one-click data deletion and zero data brokerage.
+            </p>
+        </div>
+    </div>
+
+    <div class="privacy-strip">
+        <div class="privacy-strip-container">
+            <h2>Your Privacy is Our Core Standard</h2>
+            <p>
+                We do not sell your personal data. We do not store camera feeds. All vision analysis happens in real-time in your device's memory.
+            </p>
+            <div class="footer-links">
+                <a href="privacy.html" style="font-weight: 700; color: var(--accent-violet);">Read our Full Privacy Policy &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a> ·
+            <a href="privacy.html">Privacy Policy</a> ·
+            <a href="terms.html">Terms of Service</a> ·
+            <a href="delete-account.html">Account &amp; Data Deletion</a>
+        </div>
+        <div>Contact: <a href="mailto:bhavinmodhh@gmail.com" style="color: var(--text-secondary); text-decoration: none;">bhavinmodhh@gmail.com</a></div>
+        <div style="margin-top: 8px;">&copy; 2026 RepSense (com.repsense.app). All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

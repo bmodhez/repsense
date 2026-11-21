@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - RepSense</title>
+    <meta name="description" content="Privacy Policy for RepSense - AI Workout Coach Android Application. Learn how we handle your camera, steps, and fitness data.">
+    <style>
+        :root {
+            --bg-color: #0b1020;
+            --surface-color: #151a30;
+            --card-color: #1a2240;
+            --accent-purple: #8b5cf6;
+            --accent-violet: #a78bfa;
+            --neon-green: #10b981;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #273155;
+            --max-width: 860px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent-purple), #6366f1);
+            color: #ffffff;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-violet);
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        .doc-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 36px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .effective-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0 36px;
+        }
+
+        .highlight-box h3 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 36px 0 14px;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        ul {
+            margin: 0 0 20px 24px;
+            color: var(--text-secondary);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: #ffffff;
+        }
+
+        a {
+            color: var(--accent-violet);
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            background-color: var(--surface-color);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-violet);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand">
+                <div class="brand-badge">R</div>
+                RepSense
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html" class="active">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="delete-account.html">Delete Data</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="doc-header">
+            <h1>Privacy Policy</h1>
+            <div class="effective-date">Last Updated & Effective: November 21, 2026</div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>🔒 Core Privacy Commitment: Zero Camera Recording & On-Device Processing</h3>
+            <p style="margin-bottom: 0;">
+                RepSense processes camera video frames <strong>strictly in real-time on your physical device</strong> using Google MediaPipe Pose Landmarker. <strong>We NEVER record, store, transmit, upload, or sell your camera video frames, photos, or facial biometric data.</strong>
+            </p>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>
+            Welcome to <strong>RepSense</strong> ("we", "our", or "us"). RepSense is an intelligent AI workout tracking and coaching application designed to help you count reps, monitor biomechanical exercise form, track daily physical activity, and manage workout progression.
+        </p>
+        <p>
+            This Privacy Policy explains how your information is collected, used, and protected when you use the RepSense mobile application (the "App") and related services. We comply strictly with Google Play Developer Program Policies, the Google Play User Data Policy, and applicable global privacy laws.
+        </p>
+
+        <h2>2. Information We Collect and How We Use It</h2>
+
+        <h3>A. Camera Data & Computer Vision Analysis</h3>
+        <p>
+            <strong>Permission Requested:</strong> <code>android.permission.CAMERA</code>
+        </p>
+        <ul>
+            <li><strong>How it works:</strong> The camera is used solely while you actively perform exercises in the workout trainer screen. Camera frames are streamed to an on-device machine learning model (Google MediaPipe Pose Landmarker) to detect skeletal joint coordinates (e.g., knee flexion, hip angles).</li>
+            <li><strong>Storage & Transmission:</strong> Zero camera frames or photos are ever saved to disk or transmitted over the internet. Only numeric joint angles and completed repetition counts are calculated locally in device memory.</li>
+            <li><strong>Facial Recognition:</strong> RepSense does not perform facial recognition or identity tracking.</li>
+        </ul>
+
+        <h3>B. Daily Physical Activity & Step Tracking</h3>
+        <p>
+            <strong>Permissions Requested (Optional):</strong> Health Connect <code>READ_STEPS</code> or <code>android.permission.ACTIVITY_RECOGNITION</code>.
+        </p>
+        <ul>
+            <li><strong>Health Connect:</strong> If you grant permission, RepSense reads daily step count aggregates from Health Connect to display your daily movement and calculate estimated step calories. RepSense complies with Health Connect Permissions policy, including prohibitions on selling health data.</li>
+            <li><strong>Device Step Sensor Fallback:</strong> On devices without Health Connect, the app reads hardware step counter sensor ticks to provide daily step reporting.</li>
+            <li>All step records are stored locally on your device in your private app database.</li>
+        </ul>
+
+        <h3>C. Body Metrics (Optional)</h3>
+        <ul>
+            <li>You may optionally enter your height, weight, age, and preferred BMI standard (Asian/South Asian or WHO).</li>
+            <li><strong>Purpose:</strong> Used solely to provide calorie expenditure estimates and healthy weight range references. This information is <em>general fitness guidance only and is not medical advice</em>.</li>
+            <li>Body metrics are saved in local device storage and can be updated or cleared at any time in Profile &gt; My Body.</li>
+        </ul>
+
+        <h3>D. Workout History & Analytics</h3>
+        <ul>
+            <li>Repetition counts, set durations, calculated form scores, and completion timestamps are stored in your local SQLite database on your device (<code>repsense_sessions.db</code>).</li>
+            <li>Workouts are saved progressively on your device so no data is lost during app restarts.</li>
+        </ul>
+
+        <h3>E. Google Sign-In & Account Information</h3>
+        <ul>
+            <li>RepSense allows guest mode without creating an account.</li>
+            <li>If you choose to sign in with Google (via Google Credential Manager), we receive your Google display name, email address, and unique user ID.</li>
+            <li>We use this data solely to identify your account and preserve your settings across sessions.</li>
+        </ul>
+
+        <h3>F. Subscriptions & In-App Billing</h3>
+        <ul>
+            <li>RepSense Pro subscriptions and purchases are processed exclusively by <strong>Google Play In-App Billing</strong>.</li>
+            <li>RepSense never receives, handles, or stores your credit card, debit card, or banking details. All financial transactions are secured directly by Google Play.</li>
+        </ul>
+
+        <h2>3. Third-Party Services</h2>
+        <p>We work with trusted industry-standard SDKs that comply with Google Play policies:</p>
+        <ul>
+            <li><strong>Google Play Services &amp; Google Play Billing:</strong> For secure in-app purchases, license verification, and Google Sign-In.</li>
+            <li><strong>Google Health Connect:</strong> For reading physical step count records when authorized by you.</li>
+            <li><strong>Google MediaPipe:</strong> Runs 100% offline on-device for real-time skeletal coordinate estimation.</li>
+        </ul>
+
+        <h2>4. Data Retention and Account Deletion</h2>
+        <p>
+            You have full control over your personal data:
+        </p>
+        <ul>
+            <li><strong>In-App Deletion:</strong> You can delete all workout logs, body metrics, and profile data instantly by navigating to <strong>Profile &gt; Account &gt; Delete account</strong> inside the app.</li>
+            <li><strong>Web Deletion Request:</strong> If you have uninstalled the app or wish to request data deletion via web, visit our dedicated <a href="delete-account.html">Account &amp; Data Deletion Page</a> or email us directly at <a href="mailto:bhavinmodhh@gmail.com">bhavinmodhh@gmail.com</a>. Requests are permanently processed within 48 hours.</li>
+            <li><strong>Local Data:</strong> Clearing app data or uninstalling RepSense immediately deletes the local SQLite database from your device.</li>
+        </ul>
+
+        <h2>5. Children's Privacy</h2>
+        <p>
+            RepSense is not directed to children under the age of 13 (or under 18 for unsupervised fitness training). We do not knowingly collect personal information from children under 13. Safety rules in our app restrict BMI categorization and weight target calculations for any user under 18 years of age.
+        </p>
+
+        <h2>6. Security</h2>
+        <p>
+            We implement robust security measures, including offline-first architecture, sandboxed Android storage, and encrypted transport (HTTPS / TLS) for all network communications.
+        </p>
+
+        <h2>7. Contact Us</h2>
+        <p>
+            If you have questions, feedback, or data privacy requests regarding this Privacy Policy, please contact our support team:
+        </p>
+        <p>
+            <strong>RepSense Support &amp; Privacy Officer:</strong><br>
+            Email: <a href="mailto:bhavinmodhh@gmail.com">bhavinmodhh@gmail.com</a><br>
+            Application: RepSense (com.repsense.app)
+        </p>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a> ·
+            <a href="privacy.html">Privacy Policy</a> ·
+            <a href="terms.html">Terms of Service</a> ·
+            <a href="delete-account.html">Delete Account / Data</a>
+        </div>
+        <div>&copy; 2026 RepSense. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>

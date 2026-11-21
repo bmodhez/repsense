@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account & Data - RepSense</title>
+    <meta name="description" content="Request permanent account and fitness data deletion for RepSense - AI Workout Coach.">
+    <style>
+        :root {
+            --bg-color: #0b1020;
+            --surface-color: #151a30;
+            --card-color: #1a2240;
+            --accent-purple: #8b5cf6;
+            --accent-violet: #a78bfa;
+            --danger-color: #ef4444;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: #273155;
+            --max-width: 860px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: var(--surface-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-badge {
+            background: linear-gradient(135deg, var(--accent-purple), #6366f1);
+            color: #ffffff;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active { color: var(--accent-violet); }
+
+        main {
+            max-width: var(--max-width);
+            margin: 40px auto 80px;
+            padding: 0 24px;
+        }
+
+        .doc-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 36px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle { color: var(--text-muted); font-size: 1rem; }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            margin: 28px 0;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 14px;
+        }
+
+        p { color: var(--text-secondary); margin-bottom: 16px; font-size: 1rem; }
+        ul, ol { margin: 0 0 20px 24px; color: var(--text-secondary); }
+        li { margin-bottom: 10px; }
+        strong { color: #ffffff; }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-purple), #6366f1);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        .btn-danger {
+            background: #ef4444;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .data-table th {
+            background-color: var(--card-color);
+            color: #ffffff;
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            background-color: var(--surface-color);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links { margin-bottom: 16px; }
+        .footer-links a { color: var(--text-secondary); text-decoration: none; margin: 0 12px; }
+        .footer-links a:hover { color: var(--accent-violet); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="brand">
+                <div class="brand-badge">R</div>
+                RepSense
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="delete-account.html" class="active">Delete Data</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="doc-header">
+            <h1>Account &amp; Data Deletion</h1>
+            <div class="subtitle">Request permanent deletion of your RepSense account and all associated fitness records.</div>
+        </div>
+
+        <p>
+            In accordance with Google Play Developer Policy and global data protection standards (including GDPR and CCPA), RepSense empowers you to permanently delete your account and all associated personal data at any time.
+        </p>
+
+        <!-- Method 1: In-App -->
+        <div class="card">
+            <h2>Method 1: Instant In-App Deletion (Recommended)</h2>
+            <p>If you have the RepSense app installed on your Android device, you can delete your data immediately:</p>
+            <ol>
+                <li>Open the <strong>RepSense</strong> app.</li>
+                <li>Go to the <strong>Profile</strong> tab (bottom navigation).</li>
+                <li>Scroll down to the <strong>Account</strong> section.</li>
+                <li>Tap <strong>Delete account</strong>.</li>
+                <li>Confirm deletion. All your local workouts, body metrics, steps history, and profile records will be wiped immediately.</li>
+            </ol>
+        </div>
+
+        <!-- Method 2: Web / Email Request -->
+        <div class="card">
+            <h2>Method 2: Web Deletion Request (Without App Installed)</h2>
+            <p>
+                If you have already uninstalled the app or cannot access your device, submit a data deletion request directly to our team via email:
+            </p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:bhavinmodhh@gmail.com?subject=RepSense%20Account%20and%20Data%20Deletion%20Request">bhavinmodhh@gmail.com</a><br>
+                <strong>Subject:</strong> <code>RepSense Account and Data Deletion Request</code><br>
+                <strong>Information to provide:</strong> The email address linked with your Google Sign-In or your device account ID.
+            </p>
+            <a href="mailto:bhavinmodhh@gmail.com?subject=RepSense%20Account%20and%20Data%20Deletion%20Request&body=Hello%20RepSense%20Support%2C%0A%0APlease%20permanently%20delete%20my%20RepSense%20account%20and%20all%20associated%20data.%0A%0AMy%20registered%20email%3A%20%0A%0AThank%20you." class="btn btn-danger">
+                Send Deletion Request Email
+            </a>
+            <p style="margin-top: 14px; font-size: 0.9rem; color: var(--text-muted);">
+                Web deletion requests are verified and permanently fulfilled within <strong>48 hours</strong>.
+            </p>
+        </div>
+
+        <!-- What Data is Deleted Table -->
+        <h2>What Data Is Deleted?</h2>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data Category</th>
+                    <th>Action Upon Deletion</th>
+                    <th>Retention Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>User Profile &amp; Google ID</strong></td>
+                    <td>Permanently purged from local preferences and records.</td>
+                    <td>0 days (Immediate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Workout History &amp; Rep Logs</strong></td>
+                    <td>Local SQLite database (<code>repsense_sessions.db</code>) wiped completely.</td>
+                    <td>0 days (Immediate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Body Metrics (Height, Weight, BMI)</strong></td>
+                    <td>Permanently deleted.</td>
+                    <td>0 days (Immediate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Daily Steps &amp; Calorie Records</strong></td>
+                    <td>Purged from internal device logs.</td>
+                    <td>0 days (Immediate)</td>
+                </tr>
+                <tr>
+                    <td><strong>Camera / Video Data</strong></td>
+                    <td>Not applicable (Zero camera frames were ever saved or transmitted).</td>
+                    <td>Never stored</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Active Google Play Subscriptions Note</h2>
+        <p>
+            Deleting your RepSense account does not automatically cancel an active Google Play subscription. To prevent unwanted charges from Google, cancel your subscription in the <a href="https://play.google.com/store/account/subscriptions" target="_blank" rel="noopener">Google Play Subscriptions Center</a> prior to deleting your account.
+        </p>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a> ·
+            <a href="privacy.html">Privacy Policy</a> ·
+            <a href="terms.html">Terms of Service</a> ·
+            <a href="delete-account.html">Delete Account / Data</a>
+        </div>
+        <div>&copy; 2026 RepSense. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
